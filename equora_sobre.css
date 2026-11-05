@@ -1,0 +1,31 @@
+/* ==========================================================
+   SOBRE NÓS (equora_sobre.html)
+   (as formatações gerais do site estão em equora.css)
+   ========================================================== */
+
+/* Cartões da missão e da equipa */
+.cartao-categoria { text-align: center; padding: 1.6rem 1rem; }
+.cartao-categoria .icone { font-size: 2.8rem; display: block; margin-bottom: 0.4rem; }
+.cartao-categoria h3 { color: var(--castanho); }
+.seccao h2 { border-left: 6px solid var(--castanho); padding-left: 0.8rem; margin-bottom: 1rem; }
+.seccao.alt { padding: 2rem 1.5rem; border-radius: var(--raio); }
+
+/* ---------- Contactos (secção no fim da página) ---------- */
+
+/* Disposição em duas colunas */
+.grelha-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; align-items: start; }
+.grelha-2 > div:first-child p { margin-bottom: 0.4rem; font-size: 1.05rem; }
+
+/* Formulário e mensagem de confirmação */
+.formulario { background: var(--branco); border-radius: var(--raio); padding: 1.5rem; box-shadow: var(--sombra); }
+.mensagem-ok {
+  background: #e7f4e8; border: 2px solid var(--ok); color: #1b5e20;
+  border-radius: var(--raio); padding: 1.2rem; margin-bottom: 1rem;
+}
+.mensagem-ok[hidden] { display: none; }
+#contador-msg { color: var(--cinza); text-align: right; }
+
+/* Horário */
+.tabela-info { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+.tabela-info th, .tabela-info td { text-align: left; padding: 0.5rem 0.4rem; border-bottom: 1px solid var(--areia); }
+.tabela-info th { width: 40%; color: var(--cinza); font-weight: 600; }

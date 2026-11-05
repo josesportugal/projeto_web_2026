@@ -1,0 +1,152 @@
+/* ==========================================================
+   EQUORA – folha de estilos partilhada por todas as páginas
+   CSS GERAL do site: formatações usadas em todas as páginas.
+   Cada página HTML tem depois o seu ficheiro próprio (equora_<página>.css).
+   Índice: Variáveis · Base · Cabeçalho/Menu · Botões · Secções
+           Cartões · Campos de formulário · Rodapé · Responsivo
+   ========================================================== */
+
+/* 1. VARIÁVEIS (cores e medidas usadas em todo o site) */
+:root {
+  --castanho: #723a15;        /* cor do logótipo */
+  --castanho-escuro: #4a2509;
+  --castanho-claro: #a8683b;
+  --creme: #faf5ee;
+  --areia: #efe4d4;
+  --verde: #3f6b4c;
+  --texto: #2b2018;
+  --cinza: #6e625a;
+  --branco: #ffffff;
+  --erro: #b3261e;
+  --ok: #2e7d32;
+  --raio: 14px;
+  --sombra: 0 4px 16px rgba(74, 37, 9, 0.12);
+}
+
+/* 2. BASE */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--texto);
+  background: var(--creme);
+  line-height: 1.6;
+}
+h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; color: var(--castanho-escuro); line-height: 1.2; }
+h1 { font-size: clamp(2rem, 5vw, 3.2rem); }
+h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 0.6rem; }
+h3 { font-size: 1.2rem; margin-bottom: 0.3rem; }
+a { color: var(--castanho); }
+img { max-width: 100%; display: block; }
+.container { width: min(1120px, 100% - 2rem); margin-inline: auto; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+:focus-visible { outline: 3px solid var(--verde); outline-offset: 2px; }
+
+/* 3. CABEÇALHO E MENU */
+.cabecalho {
+  background: var(--branco);
+  border-bottom: 4px solid var(--castanho-escuro);
+  position: sticky; top: 0; z-index: 50;
+}
+.cabecalho .container { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 0.4rem; }
+.logo img { height: 64px; width: auto; }
+.menu ul { list-style: none; display: flex; gap: 0.2rem; }
+.menu a {
+  display: block; padding: 0.5rem 0.8rem; border-radius: 8px;
+  text-decoration: none; color: var(--texto); font-weight: 500;
+}
+.menu a:hover { background: var(--areia); }
+.menu a[aria-current="page"] { background: var(--castanho); color: var(--branco); }
+.btn-menu {
+  display: none; background: none; border: 2px solid var(--castanho-escuro);
+  border-radius: 8px; font-size: 1.6rem; line-height: 1; padding: 0.2rem 0.6rem; cursor: pointer; color: var(--castanho-escuro);
+}
+
+/* Barra "voltar à página principal" (presente em todas as páginas, exceto a principal) */
+.barra-voltar { background: var(--areia); padding: 0.6rem 0; }
+.barra-voltar .container { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+.btn-voltar {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  background: var(--branco); color: var(--castanho-escuro); text-decoration: none;
+  border: 2px solid var(--castanho); border-radius: 999px; padding: 0.3rem 1rem; font-weight: 600; font-size: 0.95rem;
+}
+.btn-voltar:hover { background: var(--castanho); color: var(--branco); }
+
+/* 4. BOTÕES */
+.btn {
+  display: inline-block; border: 0; cursor: pointer; text-decoration: none;
+  background: var(--castanho); color: var(--branco); font: inherit; font-weight: 600;
+  padding: 0.75rem 1.6rem; border-radius: 10px; transition: background 0.2s, transform 0.1s;
+}
+.btn:hover { background: var(--castanho-escuro); }
+.btn:active { transform: scale(0.97); }
+.btn-verde { background: var(--verde); }
+.btn-verde:hover { background: #2d5039; }
+.btn-claro { background: var(--branco); color: var(--castanho-escuro); border: 2px solid var(--castanho); }
+.btn-claro:hover { background: var(--areia); }
+.btn-pequeno { padding: 0.45rem 1rem; font-size: 0.9rem; }
+
+/* 5. SECÇÕES */
+main { min-height: 60vh; }
+.seccao { padding: 3rem 0; }
+.seccao.alt { background: var(--areia); }
+.titulo-pagina { padding: 2rem 0 1rem; }
+.titulo-pagina p { color: var(--cinza); max-width: 60ch; }
+.subtitulo { color: var(--cinza); margin-bottom: 1.5rem; }
+
+.grelha { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.2rem; }
+
+/* 6. CARTÕES */
+.cartao {
+  background: var(--branco); border-radius: var(--raio); overflow: hidden;
+  box-shadow: var(--sombra); display: flex; flex-direction: column; transition: transform 0.2s;
+}
+.cartao:hover { transform: translateY(-4px); }
+.cartao-corpo { padding: 1rem; display: flex; flex-direction: column; gap: 0.4rem; flex: 1; }
+.cartao-corpo .btn { margin-top: auto; text-align: center; }
+.cartao-link { text-decoration: none; color: inherit; }
+.cartao img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+.cartao[hidden] { display: none; }
+.etiquetas { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.etiqueta { background: var(--areia); color: var(--castanho-escuro); font-size: 0.8rem; padding: 0.1rem 0.6rem; border-radius: 999px; }
+.preco { font-weight: 700; color: var(--verde); font-size: 1.1rem; }
+
+/* 9. FORMULÁRIOS */
+.linha-form { display: flex; flex-direction: column; gap: 0.3rem; margin-bottom: 1rem; }
+label, legend { font-weight: 600; }
+input[type="text"], input[type="email"], input[type="tel"], input[type="date"], input[type="search"], select, textarea {
+  font: inherit; padding: 0.6rem 0.8rem; border: 2px solid #d9cbb9; border-radius: 10px; background: var(--branco); width: 100%;
+}
+input:focus, select:focus, textarea:focus { border-color: var(--castanho); outline: none; }
+input[type="range"] { width: 100%; accent-color: var(--castanho); }
+textarea { min-height: 120px; resize: vertical; }
+fieldset { border: 2px solid #d9cbb9; border-radius: 10px; padding: 0.8rem 1rem; margin-bottom: 1rem; }
+.opcao { display: flex; gap: 0.6rem; align-items: center; padding: 0.3rem 0; font-weight: 400; cursor: pointer; }
+.opcao input { width: 1.1rem; height: 1.1rem; accent-color: var(--castanho); }
+.erro { color: var(--erro); font-size: 0.85rem; min-height: 1.1em; }
+.invalido { border-color: var(--erro) !important; }
+
+/* 12. RODAPÉ */
+.rodape { background: var(--castanho-escuro); color: #e9dccb; padding: 2rem 0 1rem; margin-top: 2rem; }
+.rodape .container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+.rodape h3 { color: #fff; font-size: 1rem; }
+.rodape a { color: #e9dccb; display: block; padding: 0.1rem 0; }
+.rodape a:hover { color: #fff; }
+.rodape .direitos { grid-column: 1 / -1; border-top: 1px solid #ffffff33; padding-top: 0.8rem; font-size: 0.85rem; text-align: center; }
+.voltar-topo {
+  position: fixed; right: 1rem; bottom: 1rem; width: 3rem; height: 3rem; border-radius: 50%; border: 0;
+  background: var(--castanho); color: #fff; font-size: 1.3rem; cursor: pointer; box-shadow: var(--sombra); display: none; z-index: 40;
+}
+.voltar-topo.visivel { display: block; }
+
+/* 13. RESPONSIVO (telemóvel: menu "hambúrguer") */
+@media (max-width: 800px) {
+  .btn-menu { display: block; }
+  .menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--branco); border-bottom: 4px solid var(--castanho-escuro); padding: 0.5rem 1rem 1rem; }
+  .menu.aberto { display: block; }
+  .menu ul { flex-direction: column; }
+  .logo img { height: 52px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; scroll-behavior: auto !important; }
+}

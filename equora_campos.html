@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Campos – Equora, centro hípico">
+  <title>Campos · Equora</title>
+  <link rel="icon" href="images/logo.png">
+  <link rel="stylesheet" href="equora.css">
+  <link rel="stylesheet" href="equora_campos.css">
+</head>
+<body>
+  <header class="cabecalho">
+    <div class="container">
+      <a class="logo" href="equora_principal.html" aria-label="Equora – ir para a página principal"><img src="images/logo.png" alt="Equora"></a>
+      <button class="btn-menu" id="btn-menu" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">☰</button>
+      <nav class="menu" id="menu" aria-label="Menu principal">
+      <ul>
+        <li><a href="equora_principal.html">Início</a></li>
+        <li><a href="equora_campos.html" aria-current="page">Campos</a></li>
+        <li><a href="equora_cavalos.html">Cavalos</a></li>
+        <li><a href="equora_equipamento.html">Equipamento</a></li>
+        <li><a href="equora_reservas.html">Reservas</a></li>
+        <li><a href="equora_sobre.html">Sobre nós</a></li>
+      </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="barra-voltar">
+    <div class="container">
+      <a class="btn-voltar" href="equora_principal.html">🏠 Voltar à página principal</a>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+
+      <!-- VISTA 1: lista com filtros -->
+      <div id="vista-lista">
+        <div class="titulo-pagina">
+          <h1>Campos</h1>
+          <p>Picadeiros, pistas de saltos e trilhos. Filtra por tipo e preço.</p>
+        </div>
+
+        <div class="filtros" aria-label="Filtros">
+          <div class="campo">
+            <label for="pesquisa">Pesquisar</label>
+            <input type="search" id="pesquisa" placeholder="Escreve um nome…">
+          </div>
+      <div class="campo">
+        <label for="filtro-tipo">Tipo</label>
+        <select id="filtro-tipo" data-filtro="tipo">
+          <option value="">Todos</option>
+          <option value="Adestramento">Adestramento</option>
+          <option value="Coberto">Coberto</option>
+          <option value="Exterior">Exterior</option>
+          <option value="Saltos">Saltos</option>
+          <option value="Trilho">Trilho</option>
+        </select>
+      </div>
+          <div class="campo">
+            <label for="filtro-preco">Preço máximo: <span id="valor-preco">25 €/hora</span></label>
+            <input type="range" id="filtro-preco" min="0" max="25" value="25" data-unidade="€/hora">
+          </div>
+          <button type="button" class="btn btn-claro btn-pequeno" id="limpar">Limpar filtros</button>
+        </div>
+
+        <p class="contador" id="contador" aria-live="polite">6 resultados</p>
+
+        <div class="grelha" id="lista">
+        <article class="cartao" data-tipo="Coberto" data-preco="18">
+          <img src="images/campos/picadeiro-coberto.svg" alt="Campo Picadeiro Coberto">
+          <div class="cartao-corpo">
+            <h3>Picadeiro Coberto</h3>
+            <div class="etiquetas"><span class="etiqueta">Coberto</span><span class="etiqueta">40 × 20 m</span></div>
+            <span class="preco">18 € <small>/ hora</small></span>
+            <a class="btn btn-pequeno" href="equora_campos.html#item-1">Ver detalhes</a>
+          </div>
+        </article>
+        <article class="cartao" data-tipo="Exterior" data-preco="12">
+          <img src="images/campos/picadeiro-exterior.svg" alt="Campo Picadeiro Exterior">
+          <div class="cartao-corpo">
+            <h3>Picadeiro Exterior</h3>
+            <div class="etiquetas"><span class="etiqueta">Exterior</span><span class="etiqueta">60 × 30 m</span></div>
+            <span class="preco">12 € <small>/ hora</small></span>
+            <a class="btn btn-pequeno" href="equora_campos.html#item-2">Ver detalhes</a>
+          </div>
+        </article>
+        <article class="cartao" data-tipo="Saltos" data-preco="20">
+          <img src="images/campos/pista-de-obstaculos.svg" alt="Campo Pista de Obstáculos">
+          <div class="cartao-corpo">
+            <h3>Pista de Obstáculos</h3>
+            <div class="etiquetas"><span class="etiqueta">Saltos</span><span class="etiqueta">70 × 35 m</span></div>
+            <span class="preco">20 € <small>/ hora</small></span>
+            <a class="btn btn-pequeno" href="equora_campos.html#item-3">Ver detalhes</a>
+          </div>
+        </article>
+        <article class="cartao" data-tipo="Adestramento" data-preco="15">
+          <img src="images/campos/pista-de-dressage.svg" alt="Campo Pista de Dressage">
+          <div class="cartao-corpo">
+            <h3>Pista de Dressage</h3>
+            <div class="etiquetas"><span class="etiqueta">Adestramento</span><span class="etiqueta">60 × 20 m</span></div>
+            <span class="preco">15 € <small>/ hora</small></span>
+            <a class="btn btn-pequeno" href="equora_campos.html#item-4">Ver detalhes</a>
+          </div>
+        </article>
+        <article class="cartao" data-tipo="Trilho" data-preco="25">
+          <img src="images/campos/circuito-de-trilhos.svg" alt="Campo Circuito de Trilhos">
+          <div class="cartao-corpo">
+            <h3>Circuito de Trilhos</h3>
+            <div class="etiquetas"><span class="etiqueta">Trilho</span><span class="etiqueta">6 km</span></div>
+            <span class="preco">25 € <small>/ hora</small></span>
+            <a class="btn btn-pequeno" href="equora_campos.html#item-5">Ver detalhes</a>
+          </div>
+        </article>
+        <article class="cartao" data-tipo="Exterior" data-preco="10">
+          <img src="images/campos/redondel-de-iniciacao.svg" alt="Campo Redondel de Iniciação">
+          <div class="cartao-corpo">
+            <h3>Redondel de Iniciação</h3>
+            <div class="etiquetas"><span class="etiqueta">Exterior</span><span class="etiqueta">18 m de diâmetro</span></div>
+            <span class="preco">10 € <small>/ hora</small></span>
+            <a class="btn btn-pequeno" href="equora_campos.html#item-6">Ver detalhes</a>
+          </div>
+        </article>
+        </div>
+        <p class="sem-resultados" id="sem-resultados" hidden>😕 Não encontrámos nada com esses filtros. Experimenta limpar os filtros.</p>
+      </div>
+
+      <!-- VISTA 2: detalhe. Todos os itens estão aqui; só aparece o do endereço (…#item-3) -->
+      <div id="vista-detalhe" class="seccao" hidden>
+        <article class="detalhe-item" id="item-1" hidden>
+          <div class="grelha-2">
+            <div class="detalhe-foto">
+              <img src="images/campos/picadeiro-coberto.svg" alt="Campo Picadeiro Coberto">
+            </div>
+            <div class="detalhe-info">
+              <h1>Picadeiro Coberto</h1>
+              <p>Picadeiro coberto com piso de areia e fibra, ideal para aulas durante todo o ano, mesmo com chuva.</p>
+              <span class="preco">18 € / hora</span>
+              <table class="tabela-info">
+                <tbody>
+                <tr><th>Tipo</th><td>Coberto</td></tr>
+                <tr><th>Dimensões</th><td>40 × 20 m</td></tr>
+                <tr><th>Disponibilidade</th><td>Segunda a sábado, 09:00 – 19:00</td></tr>
+                </tbody>
+              </table>
+              <div class="acoes">
+                <a class="btn btn-verde" href="equora_reservas.html?servico=livre&amp;item=1">Reservar</a>
+                <a class="btn btn-claro" href="equora_campos.html#lista">← Ver todos em Campos</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="detalhe-item" id="item-2" hidden>
+          <div class="grelha-2">
+            <div class="detalhe-foto">
+              <img src="images/campos/picadeiro-exterior.svg" alt="Campo Picadeiro Exterior">
+            </div>
+            <div class="detalhe-info">
+              <h1>Picadeiro Exterior</h1>
+              <p>Espaço aberto com vista para o vale, perfeito para treino livre e passeios de iniciação.</p>
+              <span class="preco">12 € / hora</span>
+              <table class="tabela-info">
+                <tbody>
+                <tr><th>Tipo</th><td>Exterior</td></tr>
+                <tr><th>Dimensões</th><td>60 × 30 m</td></tr>
+                <tr><th>Disponibilidade</th><td>Segunda a sábado, 09:00 – 18:00</td></tr>
+                </tbody>
+              </table>
+              <div class="acoes">
+                <a class="btn btn-verde" href="equora_reservas.html?servico=livre&amp;item=2">Reservar</a>
+                <a class="btn btn-claro" href="equora_campos.html#lista">← Ver todos em Campos</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="detalhe-item" id="item-3" hidden>
+          <div class="grelha-2">
+            <div class="detalhe-foto">
+              <img src="images/campos/pista-de-obstaculos.svg" alt="Campo Pista de Obstáculos">
+            </div>
+            <div class="detalhe-info">
+              <h1>Pista de Obstáculos</h1>
+              <p>Pista com obstáculos ajustáveis em altura para treino de saltos, do nível iniciado ao avançado.</p>
+              <span class="preco">20 € / hora</span>
+              <table class="tabela-info">
+                <tbody>
+                <tr><th>Tipo</th><td>Saltos</td></tr>
+                <tr><th>Dimensões</th><td>70 × 35 m</td></tr>
+                <tr><th>Disponibilidade</th><td>Terça a sábado, 10:00 – 18:00</td></tr>
+                </tbody>
+              </table>
+              <div class="acoes">
+                <a class="btn btn-verde" href="equora_reservas.html?servico=livre&amp;item=3">Reservar</a>
+                <a class="btn btn-claro" href="equora_campos.html#lista">← Ver todos em Campos</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="detalhe-item" id="item-4" hidden>
+          <div class="grelha-2">
+            <div class="detalhe-foto">
+              <img src="images/campos/pista-de-dressage.svg" alt="Campo Pista de Dressage">
+            </div>
+            <div class="detalhe-info">
+              <h1>Pista de Dressage</h1>
+              <p>Pista regulamentar com letras e piso nivelado para treino de adestramento.</p>
+              <span class="preco">15 € / hora</span>
+              <table class="tabela-info">
+                <tbody>
+                <tr><th>Tipo</th><td>Adestramento</td></tr>
+                <tr><th>Dimensões</th><td>60 × 20 m</td></tr>
+                <tr><th>Disponibilidade</th><td>Segunda a sexta, 09:00 – 17:00</td></tr>
+                </tbody>
+              </table>
+              <div class="acoes">
+                <a class="btn btn-verde" href="equora_reservas.html?servico=livre&amp;item=4">Reservar</a>
+                <a class="btn btn-claro" href="equora_campos.html#lista">← Ver todos em Campos</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="detalhe-item" id="item-5" hidden>
+          <div class="grelha-2">
+            <div class="detalhe-foto">
+              <img src="images/campos/circuito-de-trilhos.svg" alt="Campo Circuito de Trilhos">
+            </div>
+            <div class="detalhe-info">
+              <h1>Circuito de Trilhos</h1>
+              <p>Percurso de 6 km pela floresta com cavalos acompanhados por um guia. Duração aproximada de 1h30.</p>
+              <span class="preco">25 € / hora</span>
+              <table class="tabela-info">
+                <tbody>
+                <tr><th>Tipo</th><td>Trilho</td></tr>
+                <tr><th>Dimensões</th><td>6 km</td></tr>
+                <tr><th>Disponibilidade</th><td>Sábado e domingo, 09:00 – 16:00</td></tr>
+                </tbody>
+              </table>
+              <div class="acoes">
+                <a class="btn btn-verde" href="equora_reservas.html?servico=livre&amp;item=5">Reservar</a>
+                <a class="btn btn-claro" href="equora_campos.html#lista">← Ver todos em Campos</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="detalhe-item" id="item-6" hidden>
+          <div class="grelha-2">
+            <div class="detalhe-foto">
+              <img src="images/campos/redondel-de-iniciacao.svg" alt="Campo Redondel de Iniciação">
+            </div>
+            <div class="detalhe-info">
+              <h1>Redondel de Iniciação</h1>
+              <p>Pequeno espaço circular e seguro, usado nas primeiras aulas e no trabalho à guia.</p>
+              <span class="preco">10 € / hora</span>
+              <table class="tabela-info">
+                <tbody>
+                <tr><th>Tipo</th><td>Exterior</td></tr>
+                <tr><th>Dimensões</th><td>18 m de diâmetro</td></tr>
+                <tr><th>Disponibilidade</th><td>Segunda a sábado, 09:00 – 19:00</td></tr>
+                </tbody>
+              </table>
+              <div class="acoes">
+                <a class="btn btn-verde" href="equora_reservas.html?servico=livre&amp;item=6">Reservar</a>
+                <a class="btn btn-claro" href="equora_campos.html#lista">← Ver todos em Campos</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+    </div>
+  </main>
+  <footer class="rodape">
+    <div class="container">
+      <div>
+        <h3>Equora</h3>
+        <p>Marcações, cavalos e equipamento num só lugar.</p>
+      </div>
+      <div>
+        <h3>Páginas</h3>
+        <a href="equora_principal.html">Início</a>
+        <a href="equora_sobre.html">Sobre nós</a>
+        <a href="equora_sobre.html#contactos">Contactos</a>
+      </div>
+      <div>
+        <h3>Reservar</h3>
+        <a href="equora_campos.html">Campos</a>
+        <a href="equora_cavalos.html">Cavalos</a>
+        <a href="equora_equipamento.html">Equipamento</a>
+        <a href="equora_reservas.html">Fazer reserva</a>
+      </div>
+      <p class="direitos">© <span id="ano">2026</span> Equora · Projeto académico de Desenvolvimento para a Web</p>
+    </div>
+  </footer>
+  <button class="voltar-topo" id="voltar-topo" aria-label="Voltar ao topo">↑</button>
+
+  <script src="js/comum.js"></script>
+  <script src="js/lista.js"></script>
+</body>
+</html>

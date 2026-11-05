@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Equipamento – Equora, centro hípico">
+  <title>Equipamento · Equora</title>
+  <link rel="icon" href="images/logo.png">
+  <link rel="stylesheet" href="equora.css">
+  <link rel="stylesheet" href="equora_equipamento.css">
+</head>
+<body>
+  <header class="cabecalho">
+    <div class="container">
+      <a class="logo" href="equora_principal.html" aria-label="Equora – ir para a página principal"><img src="images/logo.png" alt="Equora"></a>
+      <button class="btn-menu" id="btn-menu" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">☰</button>
+      <nav class="menu" id="menu" aria-label="Menu principal">
+      <ul>
+        <li><a href="equora_principal.html">Início</a></li>
+        <li><a href="equora_campos.html">Campos</a></li>
+        <li><a href="equora_cavalos.html">Cavalos</a></li>
+        <li><a href="equora_equipamento.html" aria-current="page">Equipamento</a></li>
+        <li><a href="equora_reservas.html">Reservas</a></li>
+        <li><a href="equora_sobre.html">Sobre nós</a></li>
+      </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="barra-voltar">
+    <div class="container">
+      <a class="btn-voltar" href="equora_principal.html">🏠 Voltar à página principal</a>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+
+      <!-- VISTA 1: lista com filtros -->
+      <div id="vista-lista">
+        <div class="titulo-pagina">
+          <h1>Equipamento</h1>
+          <p>Capacetes, selas, botas e acessórios para alugar.</p>
+        </div>
+
+        <div class="filtros" aria-label="Filtros">
+          <div class="campo">
+            <label for="pesquisa">Pesquisar</label>
+            <input type="search" id="pesquisa" placeholder="Escreve um nome…">
+          </div>
+      <div class="campo">
+        <label for="filtro-categoria">Categoria</label>
+        <select id="filtro-categoria" data-filtro="categoria">
+          <option value="">Todos</option>
+          <option value="Acessórios">Acessórios</option>
+          <option value="Botas">Botas</option>
+          <option value="Capacetes">Capacetes</option>
+          <option value="Selas">Selas</option>
+        </select>
+      </div>
+          <div class="campo">
+            <label for="filtro-preco">Preço máximo: <span id="valor-preco">12 €/dia</span></label>
+            <input type="range" id="filtro-preco" min="0" max="12" value="12" data-unidade="€/dia">
+          </div>
+          <button type="button" class="btn btn-claro btn-pequeno" id="limpar">Limpar filtros</button>
+        </div>
+
+        <p class="contador" id="contador" aria-live="polite">9 resultados</p>
+
+        <div class="grelha" id="lista">
+        <article class="cartao" data-categoria="Capacetes" data-preco="3">
+          <img src="images/equipamento/capacete-de-equitacao.svg" alt="Equipamento Capacete de Equitação">
+          <div class="cartao-corpo">
+            <h3>Capacete de Equitação</h3>
+            <div class="etiquetas"><span class="etiqueta">Capacetes</span><span class="etiqueta">S, M, L</span></div>
+            <span class="preco">3 € <small>/ dia</small></span>
+            <a class="btn btn-pequeno" href="equora_equipamento.html#item-1">Ver detalhes</a>
+          </div>
+        </article>
+        <article class="cartao" data-categoria="Capacetes" data-preco="3">
+          <img src="images/equipamento/capacete-junior.svg" alt="Equipamento Capacete Júnior">
+          <div class="cartao-corpo">
+            <h3>Capacete Júnior</h3>
+            <div class="etiquetas"><span class="etiqueta">Capacetes</span><span class="etiqueta">XS, S</span></div>
+            <span class="preco">3 € <small>/ dia</small></span>
+            <a class="btn btn-pequeno" href="equora_equipamento.html#item-2">Ver detalhes</a>
+          </div>
+        </article>
+        <article class="cartao" data-categoria="Selas" data-preco="12">
+          <img src="images/equipamento/sela-de-salto.svg" alt="Equipamento Sela de Salto">
+          <div class="cartao-corpo">
+            <h3>Sela de Salto</h3>
+            <div class="etiquetas"><span class="etiqueta">Selas</span><span class="etiqueta">16", 17", 17.5"</span></div>
+            <span class="preco">12 € <small>/ dia</small></span>
+            <a class="btn btn-pequeno" href="equora_equipamento.html#item-3">Ver detalhes</a>
+          </div>
+        </article>
+        <article class="cartao" data-categoria="Selas" data-preco="12">
+          <img src="images/equipamento/sela-de-dressage.svg" alt="Equipamento Sela de Dressage">
+          <div class="cartao-corpo">
+            <h3>Sela de Dressage</h3>
+            <div class="etiquetas"><span class="etiqueta">Selas</span><span class="etiqueta">17", 17.5", 18"</span></div>
+            <span class="preco">12 € <small>/ dia</small></span>
+            <a class="btn btn-pequeno" href="equora_equipamento.html#item-4">Ver detalhes</a>
+          </div>
+        </article>
+        <article class="cartao" data-categoria="Botas" data-preco="5">
+          <img src="images/equipamento/botas-de-cano-alto.svg" alt="Equipamento Botas de Cano Alto">
+          <div class="cartao-corpo">
+            <h3>Botas de Cano Alto</h3>
+            <div class="etiquetas"><span class="etiqueta">Botas</span><span class="etiqueta">36 – 46</span></div>
+            <span class="preco">5 € <small>/ dia</small></span>
+            <a class="btn btn-pequeno" href="equora_equipamento.html#item-5">Ver detalhes</a>
+          </div>
+        </article>
+        <article class="cartao" data-categoria="Botas" data-preco="4">
+          <img src="images/equipamento/botins-de-equitacao.svg" alt="Equipamento Botins de Equitação">
+          <div class="cartao-corpo">
+            <h3>Botins de Equitação</h3>
+            <div class="etiquetas"><span class="etiqueta">Botas</span><span class="etiqueta">34 – 45</span></div>
+            <span class="preco">4 € <small>/ dia</small></span>
+            <a class="btn btn-pequeno" href="equora_equipamento.html#item-6">Ver detalhes</a>
+          </div>
+        </article>
+        <article class="cartao" data-categoria="Acessórios" data-preco="2">
+          <img src="images/equipamento/luvas-de-equitacao.svg" alt="Equipamento Luvas de Equitação">
+          <div class="cartao-corpo">
+            <h3>Luvas de Equitação</h3>
+            <div class="etiquetas"><span class="etiqueta">Acessórios</span><span class="etiqueta">S, M, L</span></div>
+            <span class="preco">2 € <small>/ dia</small></span>
+            <a class="btn btn-pequeno" href="equora_equipamento.html#item-7">Ver detalhes</a>
+          </div>
+        </article>
+        <article class="cartao" data-categoria="Acessórios" data-preco="6">
+          <img src="images/equipamento/colete-de-protecao.svg" alt="Equipamento Colete de Proteção">
+          <div class="cartao-corpo">
+            <h3>Colete de Proteção</h3>
+            <div class="etiquetas"><span class="etiqueta">Acessórios</span><span class="etiqueta">S, M, L, XL</span></div>
+            <span class="preco">6 € <small>/ dia</small></span>
+            <a class="btn btn-pequeno" href="equora_equipamento.html#item-8">Ver detalhes</a>
+          </div>
+        </article>
+        <article class="cartao" data-categoria="Acessórios" data-preco="2">
+          <img src="images/equipamento/chicote-e-esporas.svg" alt="Equipamento Chicote e Esporas">
+          <div class="cartao-corpo">
+            <h3>Chicote e Esporas</h3>
+            <div class="etiquetas"><span class="etiqueta">Acessórios</span><span class="etiqueta">Tamanho único</span></div>
+            <span class="preco">2 € <small>/ dia</small></span>
+            <a class="btn btn-pequeno" href="equora_equipamento.html#item-9">Ver detalhes</a>
+          </div>
+        </article>
+        </div>
+        <p class="sem-resultados" id="sem-resultados" hidden>😕 Não encontrámos nada com esses filtros. Experimenta limpar os filtros.</p>
+      </div>
+
+      <!-- VISTA 2: detalhe. Todos os itens estão aqui; só aparece o do endereço (…#item-3) -->
+      <div id="vista-detalhe" class="seccao" hidden>
+        <article class="detalhe-item" id="item-1" hidden>
+          <div class="grelha-2">
+            <div class="detalhe-foto">
+              <img src="images/equipamento/capacete-de-equitacao.svg" alt="Equipamento Capacete de Equitação">
+            </div>
+            <div class="detalhe-info">
+              <h1>Capacete de Equitação</h1>
+              <p>Capacete certificado, leve e ventilado. Obrigatório em todas as aulas e passeios.</p>
+              <span class="preco">3 € / dia</span>
+              <table class="tabela-info">
+                <tbody>
+                <tr><th>Categoria</th><td>Capacetes</td></tr>
+                <tr><th>Tamanhos</th><td>S, M, L</td></tr>
+                <tr><th>Em stock</th><td>12 unidades</td></tr>
+                </tbody>
+              </table>
+              <div class="acoes">
+                <a class="btn btn-verde" href="equora_reservas.html?servico=material&amp;item=1">Reservar</a>
+                <a class="btn btn-claro" href="equora_equipamento.html#lista">← Ver todos em Equipamento</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="detalhe-item" id="item-2" hidden>
+          <div class="grelha-2">
+            <div class="detalhe-foto">
+              <img src="images/equipamento/capacete-junior.svg" alt="Equipamento Capacete Júnior">
+            </div>
+            <div class="detalhe-info">
+              <h1>Capacete Júnior</h1>
+              <p>Capacete com ajuste regulável para as crianças mais novas.</p>
+              <span class="preco">3 € / dia</span>
+              <table class="tabela-info">
+                <tbody>
+                <tr><th>Categoria</th><td>Capacetes</td></tr>
+                <tr><th>Tamanhos</th><td>XS, S</td></tr>
+                <tr><th>Em stock</th><td>8 unidades</td></tr>
+                </tbody>
+              </table>
+              <div class="acoes">
+                <a class="btn btn-verde" href="equora_reservas.html?servico=material&amp;item=2">Reservar</a>
+                <a class="btn btn-claro" href="equora_equipamento.html#lista">← Ver todos em Equipamento</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="detalhe-item" id="item-3" hidden>
+          <div class="grelha-2">
+            <div class="detalhe-foto">
+              <img src="images/equipamento/sela-de-salto.svg" alt="Equipamento Sela de Salto">
+            </div>
+            <div class="detalhe-info">
+              <h1>Sela de Salto</h1>
+              <p>Sela de couro de aba avançada, pensada para treino de saltos.</p>
+              <span class="preco">12 € / dia</span>
+              <table class="tabela-info">
+                <tbody>
+                <tr><th>Categoria</th><td>Selas</td></tr>
+                <tr><th>Tamanhos</th><td>16", 17", 17.5"</td></tr>
+                <tr><th>Em stock</th><td>5 unidades</td></tr>
+                </tbody>
+              </table>
+              <div class="acoes">
+                <a class="btn btn-verde" href="equora_reservas.html?servico=material&amp;item=3">Reservar</a>
+                <a class="btn btn-claro" href="equora_equipamento.html#lista">← Ver todos em Equipamento</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="detalhe-item" id="item-4" hidden>
+          <div class="grelha-2">
+            <div class="detalhe-foto">
+              <img src="images/equipamento/sela-de-dressage.svg" alt="Equipamento Sela de Dressage">
+            </div>
+            <div class="detalhe-info">
+              <h1>Sela de Dressage</h1>
+              <p>Sela de aba reta para uma posição mais profunda e estável.</p>
+              <span class="preco">12 € / dia</span>
+              <table class="tabela-info">
+                <tbody>
+                <tr><th>Categoria</th><td>Selas</td></tr>
+                <tr><th>Tamanhos</th><td>17", 17.5", 18"</td></tr>
+                <tr><th>Em stock</th><td>4 unidades</td></tr>
+                </tbody>
+              </table>
+              <div class="acoes">
+                <a class="btn btn-verde" href="equora_reservas.html?servico=material&amp;item=4">Reservar</a>
+                <a class="btn btn-claro" href="equora_equipamento.html#lista">← Ver todos em Equipamento</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="detalhe-item" id="item-5" hidden>
+          <div class="grelha-2">
+            <div class="detalhe-foto">
+              <img src="images/equipamento/botas-de-cano-alto.svg" alt="Equipamento Botas de Cano Alto">
+            </div>
+            <div class="detalhe-info">
+              <h1>Botas de Cano Alto</h1>
+              <p>Botas de couro com sola antiderrapante, para uso em aula e competição.</p>
+              <span class="preco">5 € / dia</span>
+              <table class="tabela-info">
+                <tbody>
+                <tr><th>Categoria</th><td>Botas</td></tr>
+                <tr><th>Tamanhos</th><td>36 – 46</td></tr>
+                <tr><th>Em stock</th><td>20 pares</td></tr>
+                </tbody>
+              </table>
+              <div class="acoes">
+                <a class="btn btn-verde" href="equora_reservas.html?servico=material&amp;item=5">Reservar</a>
+                <a class="btn btn-claro" href="equora_equipamento.html#lista">← Ver todos em Equipamento</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="detalhe-item" id="item-6" hidden>
+          <div class="grelha-2">
+            <div class="detalhe-foto">
+              <img src="images/equipamento/botins-de-equitacao.svg" alt="Equipamento Botins de Equitação">
+            </div>
+            <div class="detalhe-info">
+              <h1>Botins de Equitação</h1>
+              <p>Botins práticos para iniciantes, para usar com polainas.</p>
+              <span class="preco">4 € / dia</span>
+              <table class="tabela-info">
+                <tbody>
+                <tr><th>Categoria</th><td>Botas</td></tr>
+                <tr><th>Tamanhos</th><td>34 – 45</td></tr>
+                <tr><th>Em stock</th><td>15 pares</td></tr>
+                </tbody>
+              </table>
+              <div class="acoes">
+                <a class="btn btn-verde" href="equora_reservas.html?servico=material&amp;item=6">Reservar</a>
+                <a class="btn btn-claro" href="equora_equipamento.html#lista">← Ver todos em Equipamento</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="detalhe-item" id="item-7" hidden>
+          <div class="grelha-2">
+            <div class="detalhe-foto">
+              <img src="images/equipamento/luvas-de-equitacao.svg" alt="Equipamento Luvas de Equitação">
+            </div>
+            <div class="detalhe-info">
+              <h1>Luvas de Equitação</h1>
+              <p>Luvas com palma aderente para melhor controlo das rédeas.</p>
+              <span class="preco">2 € / dia</span>
+              <table class="tabela-info">
+                <tbody>
+                <tr><th>Categoria</th><td>Acessórios</td></tr>
+                <tr><th>Tamanhos</th><td>S, M, L</td></tr>
+                <tr><th>Em stock</th><td>25 pares</td></tr>
+                </tbody>
+              </table>
+              <div class="acoes">
+                <a class="btn btn-verde" href="equora_reservas.html?servico=material&amp;item=7">Reservar</a>
+                <a class="btn btn-claro" href="equora_equipamento.html#lista">← Ver todos em Equipamento</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="detalhe-item" id="item-8" hidden>
+          <div class="grelha-2">
+            <div class="detalhe-foto">
+              <img src="images/equipamento/colete-de-protecao.svg" alt="Equipamento Colete de Proteção">
+            </div>
+            <div class="detalhe-info">
+              <h1>Colete de Proteção</h1>
+              <p>Colete de proteção corporal recomendado para saltos e trilhos.</p>
+              <span class="preco">6 € / dia</span>
+              <table class="tabela-info">
+                <tbody>
+                <tr><th>Categoria</th><td>Acessórios</td></tr>
+                <tr><th>Tamanhos</th><td>S, M, L, XL</td></tr>
+                <tr><th>Em stock</th><td>10 unidades</td></tr>
+                </tbody>
+              </table>
+              <div class="acoes">
+                <a class="btn btn-verde" href="equora_reservas.html?servico=material&amp;item=8">Reservar</a>
+                <a class="btn btn-claro" href="equora_equipamento.html#lista">← Ver todos em Equipamento</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="detalhe-item" id="item-9" hidden>
+          <div class="grelha-2">
+            <div class="detalhe-foto">
+              <img src="images/equipamento/chicote-e-esporas.svg" alt="Equipamento Chicote e Esporas">
+            </div>
+            <div class="detalhe-info">
+              <h1>Chicote e Esporas</h1>
+              <p>Conjunto de auxiliares para cavaleiros de nível intermédio e avançado.</p>
+              <span class="preco">2 € / dia</span>
+              <table class="tabela-info">
+                <tbody>
+                <tr><th>Categoria</th><td>Acessórios</td></tr>
+                <tr><th>Tamanhos</th><td>Tamanho único</td></tr>
+                <tr><th>Em stock</th><td>10 conjuntos</td></tr>
+                </tbody>
+              </table>
+              <div class="acoes">
+                <a class="btn btn-verde" href="equora_reservas.html?servico=material&amp;item=9">Reservar</a>
+                <a class="btn btn-claro" href="equora_equipamento.html#lista">← Ver todos em Equipamento</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+    </div>
+  </main>
+  <footer class="rodape">
+    <div class="container">
+      <div>
+        <h3>Equora</h3>
+        <p>Marcações, cavalos e equipamento num só lugar.</p>
+      </div>
+      <div>
+        <h3>Páginas</h3>
+        <a href="equora_principal.html">Início</a>
+        <a href="equora_sobre.html">Sobre nós</a>
+        <a href="equora_sobre.html#contactos">Contactos</a>
+      </div>
+      <div>
+        <h3>Reservar</h3>
+        <a href="equora_campos.html">Campos</a>
+        <a href="equora_cavalos.html">Cavalos</a>
+        <a href="equora_equipamento.html">Equipamento</a>
+        <a href="equora_reservas.html">Fazer reserva</a>
+      </div>
+      <p class="direitos">© <span id="ano">2026</span> Equora · Projeto académico de Desenvolvimento para a Web</p>
+    </div>
+  </footer>
+  <button class="voltar-topo" id="voltar-topo" aria-label="Voltar ao topo">↑</button>
+
+  <script src="js/comum.js"></script>
+  <script src="js/lista.js"></script>
+</body>
+</html>

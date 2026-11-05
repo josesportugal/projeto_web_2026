@@ -1,0 +1,28 @@
+/* ==========================================================
+   PÁGINA INICIAL (equora_principal.html)
+   (as formatações gerais do site estão em equora.css)
+   ========================================================== */
+
+/* Banner de entrada */
+.hero {
+  background: linear-gradient(135deg, rgba(74,37,9,0.92), rgba(114,58,21,0.8)), linear-gradient(45deg, #a8683b, #3f6b4c);
+  color: var(--branco); padding: 5rem 0; text-align: center;
+}
+.hero h1 { color: var(--branco); margin-bottom: 0.8rem; }
+.hero p { font-size: 1.15rem; margin-bottom: 1.6rem; opacity: 0.95; }
+
+/* Pesquisa rápida */
+.pesquisa-rapida {
+  display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center;
+  background: var(--branco); padding: 0.8rem; border-radius: var(--raio);
+  box-shadow: var(--sombra); max-width: 720px; margin: -2rem auto 0; position: relative;
+}
+.pesquisa-rapida input, .pesquisa-rapida select { flex: 1 1 180px; }
+
+@media (max-width: 800px) {
+  .hero { padding: 3rem 0; }
+}
+
+/* Cartões de categorias e serviços */
+.cartao-categoria { text-align: center; padding: 1.6rem 1rem; }
+.cartao-categoria .icone { font-size: 2.8rem; display: block; }

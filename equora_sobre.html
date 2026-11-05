@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sobre nós e contactos – Equora, centro hípico">
+  <title>Sobre nós e contactos · Equora</title>
+  <link rel="icon" href="images/logo.png">
+  <link rel="stylesheet" href="equora.css">
+  <link rel="stylesheet" href="equora_sobre.css">
+</head>
+<body>
+  <header class="cabecalho">
+    <div class="container">
+      <a class="logo" href="equora_principal.html" aria-label="Equora – ir para a página principal"><img src="images/logo.png" alt="Equora"></a>
+      <button class="btn-menu" id="btn-menu" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">☰</button>
+      <nav class="menu" id="menu" aria-label="Menu principal">
+      <ul>
+        <li><a href="equora_principal.html">Início</a></li>
+        <li><a href="equora_campos.html">Campos</a></li>
+        <li><a href="equora_cavalos.html">Cavalos</a></li>
+        <li><a href="equora_equipamento.html">Equipamento</a></li>
+        <li><a href="equora_reservas.html">Reservas</a></li>
+        <li><a href="equora_sobre.html" aria-current="page">Sobre nós</a></li>
+      </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="barra-voltar">
+    <div class="container">
+      <a class="btn-voltar" href="equora_principal.html">🏠 Voltar à página principal</a>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <div class="titulo-pagina">
+        <h1>Sobre nós</h1>
+        <p>Um centro hípico pensado para quem ama cavalos e quer tudo mais simples.</p>
+      </div>
+
+      <section class="seccao">
+        <h2>A nossa história</h2>
+        <p>A Equora nasceu da vontade de tornar as marcações de um centro hípico mais simples. Em vez de telefonemas e papéis,
+        o cliente escolhe aulas, espaços e material numa única interface digital, e o centro organiza-se melhor.</p>
+      </section>
+
+      <section class="seccao alt">
+        <h2>A nossa missão</h2>
+        <div class="grelha">
+          <div class="cartao cartao-categoria"><span class="icone">🤝</span><h3>Aproximar</h3><p>Facilitar a relação entre o centro hípico e os seus clientes.</p></div>
+          <div class="cartao cartao-categoria"><span class="icone">🛡️</span><h3>Segurança</h3><p>Equipamento certificado e cavalos adequados a cada nível.</p></div>
+          <div class="cartao cartao-categoria"><span class="icone">🌱</span><h3>Bem-estar</h3><p>Respeito pelos animais e pela natureza.</p></div>
+        </div>
+      </section>
+
+      <section class="seccao">
+        <h2>A equipa</h2>
+        <div class="grelha">
+          <div class="cartao cartao-categoria"><span class="icone">👨‍💻</span><h3>Miguel Dias</h3><p>Fundador do projeto Equora</p></div>
+          <div class="cartao cartao-categoria"><span class="icone">👨‍💻</span><h3>José Portugal</h3><p>Fundador do projeto Equora</p></div>
+          <div class="cartao cartao-categoria"><span class="icone">🎓</span><h3>Instrutores</h3><p>Equipa certificada para todos os níveis.</p></div>
+          <div class="cartao cartao-categoria"><span class="icone">🐴</span><h3>Tratadores</h3><p>Cuidam dos cavalos todos os dias.</p></div>
+        </div>
+      </section>
+
+      <section class="seccao" id="contactos">
+        <h2>Contactos</h2>
+        <p class="subtitulo">Tens dúvidas ou queres pedir informação? Fala connosco.</p>
+
+        <div class="mensagem-ok" id="confirmacao" role="status" hidden>
+          <h3>✅ Mensagem enviada!</h3>
+          <p id="confirmacao-texto"></p>
+          <p style="margin-top:0.8rem"><a class="btn btn-pequeno" href="equora_principal.html">Voltar à página principal</a></p>
+        </div>
+
+        <div class="grelha-2">
+          <div>
+            <h3>Onde estamos</h3>
+            <p>📍 Estrada do Centro Hípico, Coimbra <small>(morada de exemplo)</small></p>
+            <p>📞 +351 912 345 678</p>
+            <p>✉️ geral@equora.pt</p>
+            <h3 style="margin-top:1rem">Horário</h3>
+            <table class="tabela-info"><tbody>
+              <tr><th>Segunda a sexta</th><td>09:00 – 19:00</td></tr>
+              <tr><th>Sábado</th><td>09:00 – 18:00</td></tr>
+              <tr><th>Domingo</th><td>Apenas trilhos (marcação prévia)</td></tr>
+            </tbody></table>
+          </div>
+
+          <form class="formulario" id="form-contacto" novalidate>
+            <div class="linha-form">
+              <label for="nome">Nome</label>
+              <input type="text" id="nome" autocomplete="name">
+              <span class="erro" id="erro-nome"></span>
+            </div>
+            <div class="linha-form">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" autocomplete="email">
+              <span class="erro" id="erro-email"></span>
+            </div>
+            <div class="linha-form">
+              <label for="assunto">Assunto</label>
+              <select id="assunto">
+                <option value="">Escolhe…</option>
+                <option>Pedido de informação</option>
+                <option>Pedido de dados pessoais</option>
+                <option>Sugestão</option>
+                <option>Outro assunto</option>
+              </select>
+              <span class="erro" id="erro-assunto"></span>
+            </div>
+            <div class="linha-form">
+              <label for="mensagem">Mensagem</label>
+              <textarea id="mensagem" maxlength="500"></textarea>
+              <small id="contador-msg">0 / 500</small>
+              <span class="erro" id="erro-mensagem"></span>
+            </div>
+            <label class="opcao"><input type="checkbox" id="consentimento"> Aceito que os meus dados sejam usados para responder a este pedido.</label>
+            <span class="erro" id="erro-consentimento"></span>
+            <button class="btn" type="submit" style="margin-top:0.6rem">Enviar mensagem</button>
+          </form>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="rodape">
+    <div class="container">
+      <div>
+        <h3>Equora</h3>
+        <p>Marcações, cavalos e equipamento num só lugar.</p>
+      </div>
+      <div>
+        <h3>Páginas</h3>
+        <a href="equora_principal.html">Início</a>
+        <a href="equora_sobre.html">Sobre nós</a>
+        <a href="equora_sobre.html#contactos">Contactos</a>
+      </div>
+      <div>
+        <h3>Reservar</h3>
+        <a href="equora_campos.html">Campos</a>
+        <a href="equora_cavalos.html">Cavalos</a>
+        <a href="equora_equipamento.html">Equipamento</a>
+        <a href="equora_reservas.html">Fazer reserva</a>
+      </div>
+      <p class="direitos">© <span id="ano">2026</span> Equora · Projeto académico de Desenvolvimento para a Web</p>
+    </div>
+  </footer>
+  <button class="voltar-topo" id="voltar-topo" aria-label="Voltar ao topo">↑</button>
+
+  <script src="js/comum.js"></script>
+  <script src="js/contactos.js"></script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Equora – reserva aulas, campos, cavalos e equipamento num único site.">
+  <title>Início · Equora</title>
+  <link rel="icon" href="images/logo.png">
+  <link rel="stylesheet" href="equora.css">
+  <link rel="stylesheet" href="equora_principal.css">
+</head>
+<body>
+  <header class="cabecalho">
+    <div class="container">
+      <a class="logo" href="equora_principal.html" aria-label="Equora – ir para a página principal"><img src="images/logo.png" alt="Equora"></a>
+      <button class="btn-menu" id="btn-menu" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">☰</button>
+      <nav class="menu" id="menu" aria-label="Menu principal">
+      <ul>
+        <li><a href="equora_principal.html" aria-current="page">Início</a></li>
+        <li><a href="equora_campos.html">Campos</a></li>
+        <li><a href="equora_cavalos.html">Cavalos</a></li>
+        <li><a href="equora_equipamento.html">Equipamento</a></li>
+        <li><a href="equora_reservas.html">Reservas</a></li>
+        <li><a href="equora_sobre.html">Sobre nós</a></li>
+      </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Vive a aventura de cavalo</h1>
+        <p>Experiências únicas em Portugal: aulas, passeios e aluguer de cavalos e equipamento.</p>
+        <a class="btn btn-verde" href="equora_reservas.html">Fazer Reserva</a>
+      </div>
+    </section>
+
+    <div class="container">
+      <form class="pesquisa-rapida" id="pesquisa-rapida" role="search">
+        <label class="sr-only" for="pr-texto">O que procuras?</label>
+        <input type="search" id="pr-texto" placeholder="O que procuras? Ex.: lusitano, capacete…">
+        <label class="sr-only" for="pr-categoria">Categoria</label>
+        <select id="pr-categoria">
+          <option value="cavalos">Cavalos</option>
+          <option value="campos">Campos</option>
+          <option value="equipamento">Equipamento</option>
+        </select>
+        <button class="btn" type="submit">Pesquisar</button>
+      </form>
+    </div>
+
+    <section class="seccao">
+      <div class="container">
+        <h2>Explora por categoria</h2>
+        <p class="subtitulo">Tudo o que precisas para a tua próxima sessão.</p>
+        <div class="grelha">
+          <a class="cartao cartao-link cartao-categoria" href="equora_cavalos.html"><span class="icone">🐎</span><h3>Cavalos</h3><p>Raças e níveis para todos.</p></a>
+          <a class="cartao cartao-link cartao-categoria" href="equora_equipamento.html"><span class="icone">⛑️</span><h3>Equipamento</h3><p>Capacetes, selas, botas e mais.</p></a>
+          <a class="cartao cartao-link cartao-categoria" href="equora_reservas.html?servico=aula"><span class="icone">🎓</span><h3>Aulas</h3><p>Acompanhadas por instrutores.</p></a>
+          <a class="cartao cartao-link cartao-categoria" href="equora_campos.html"><span class="icone">🏟️</span><h3>Campos</h3><p>Picadeiros, pistas e trilhos.</p></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccao alt">
+      <div class="container">
+        <h2>Em destaque</h2>
+        <p class="subtitulo">Os favoritos dos nossos clientes.</p>
+        <div class="grelha">
+        <article class="cartao">
+          <img src="images/campos/picadeiro-coberto.svg" alt="Campo Picadeiro Coberto">
+          <div class="cartao-corpo">
+            <div class="etiquetas"><span class="etiqueta">Campo</span></div>
+            <h3>Picadeiro Coberto</h3>
+            <span class="preco">18 € <small>/ hora</small></span>
+            <a class="btn btn-pequeno" href="equora_campos.html#item-1">Ver detalhes</a>
+          </div>
+        </article>
+        <article class="cartao">
+          <img src="images/cavalos/trovao.svg" alt="Cavalo Trovão">
+          <div class="cartao-corpo">
+            <div class="etiquetas"><span class="etiqueta">Cavalo</span></div>
+            <h3>Trovão</h3>
+            <span class="preco">30 € <small>/ hora</small></span>
+            <a class="btn btn-pequeno" href="equora_cavalos.html#item-1">Ver detalhes</a>
+          </div>
+        </article>
+        <article class="cartao">
+          <img src="images/equipamento/capacete-de-equitacao.svg" alt="Equipamento Capacete de Equitação">
+          <div class="cartao-corpo">
+            <div class="etiquetas"><span class="etiqueta">Equipamento</span></div>
+            <h3>Capacete de Equitação</h3>
+            <span class="preco">3 € <small>/ dia</small></span>
+            <a class="btn btn-pequeno" href="equora_equipamento.html#item-1">Ver detalhes</a>
+          </div>
+        </article>
+        <article class="cartao">
+          <img src="images/equipamento/botas-de-cano-alto.svg" alt="Equipamento Botas de Cano Alto">
+          <div class="cartao-corpo">
+            <div class="etiquetas"><span class="etiqueta">Equipamento</span></div>
+            <h3>Botas de Cano Alto</h3>
+            <span class="preco">5 € <small>/ dia</small></span>
+            <a class="btn btn-pequeno" href="equora_equipamento.html#item-5">Ver detalhes</a>
+          </div>
+        </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccao">
+      <div class="container">
+        <h2>Os nossos serviços</h2>
+        <p class="subtitulo">Escolhe um serviço e vai diretamente para a reserva.</p>
+        <div class="grelha">
+          <a class="cartao cartao-link cartao-categoria" href="equora_reservas.html?servico=aula"><span class="icone">🎓</span><h3>Aula acompanhada</h3><p>Aula de 1 hora com instrutor certificado, para todos os níveis.</p></a>
+          <a class="cartao cartao-link cartao-categoria" href="equora_reservas.html?servico=livre"><span class="icone">🌿</span><h3>Utilização livre do espaço</h3><p>Acesso aos picadeiros para treinares com o teu próprio cavalo.</p></a>
+          <a class="cartao cartao-link cartao-categoria" href="equora_reservas.html?servico=cavalo"><span class="icone">🐎</span><h3>Aluguer de cavalo</h3><p>Escolhe um dos nossos cavalos para a tua sessão.</p></a>
+          <a class="cartao cartao-link cartao-categoria" href="equora_reservas.html?servico=material"><span class="icone">⛑️</span><h3>Aluguer de material</h3><p>Capacete, botas, colete e outros equipamentos.</p></a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="rodape">
+    <div class="container">
+      <div>
+        <h3>Equora</h3>
+        <p>Marcações, cavalos e equipamento num só lugar.</p>
+      </div>
+      <div>
+        <h3>Páginas</h3>
+        <a href="equora_principal.html">Início</a>
+        <a href="equora_sobre.html">Sobre nós</a>
+        <a href="equora_sobre.html#contactos">Contactos</a>
+      </div>
+      <div>
+        <h3>Reservar</h3>
+        <a href="equora_campos.html">Campos</a>
+        <a href="equora_cavalos.html">Cavalos</a>
+        <a href="equora_equipamento.html">Equipamento</a>
+        <a href="equora_reservas.html">Fazer reserva</a>
+      </div>
+      <p class="direitos">© <span id="ano">2026</span> Equora · Projeto académico de Desenvolvimento para a Web</p>
+    </div>
+  </footer>
+  <button class="voltar-topo" id="voltar-topo" aria-label="Voltar ao topo">↑</button>
+
+  <script src="js/comum.js"></script>
+  <script src="js/principal.js"></script>
+</body>
+</html>
