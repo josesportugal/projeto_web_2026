@@ -1,7 +1,4 @@
-/* ==========================================================
-   SOBRE NÓS (equora_sobre.html)
-   (as formatações gerais do site estão em equora.css)
-   ========================================================== */
+/* SOBRE NÓS */
 
 /* Cartões da missão e da equipa */
 .cartao-categoria { text-align: center; padding: 1.6rem 1rem; }
@@ -10,7 +7,7 @@
 .seccao h2 { border-left: 6px solid var(--castanho); padding-left: 0.8rem; margin-bottom: 1rem; }
 .seccao.alt { padding: 2rem 1.5rem; border-radius: var(--raio); }
 
-/* ---------- Contactos (secção no fim da página) ---------- */
+/* Contactos */
 
 /* Disposição em duas colunas */
 .grelha-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; align-items: start; }
