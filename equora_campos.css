@@ -1,7 +1,4 @@
-/* ==========================================================
-   CAMPOS – LISTA E DETALHE (equora_campos.html)
-   (as formatações gerais do site estão em equora.css)
-   ========================================================== */
+/* CAMPOS – LISTA E DETALHE */
 
 /* Filtros e resultados */
 .filtros {
@@ -17,8 +14,6 @@
 /* Específico desta página */
 .etiqueta { background: #e3efe5; color: #2d5039; }
 .cartao img { aspect-ratio: 16 / 11; }
-
-/* ---------- Detalhe (vista que aparece com #item-N) ---------- */
 
 /* Disposição em duas colunas */
 .grelha-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; align-items: start; }
