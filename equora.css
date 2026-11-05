@@ -1,10 +1,6 @@
-/* ==========================================================
-   EQUORA – folha de estilos partilhada por todas as páginas
-   CSS GERAL do site: formatações usadas em todas as páginas.
-   Cada página HTML tem depois o seu ficheiro próprio (equora_<página>.css).
-   Índice: Variáveis · Base · Cabeçalho/Menu · Botões · Secções
-           Cartões · Campos de formulário · Rodapé · Responsivo
-   ========================================================== */
+/* EQUORA css geraldo site: formatações usadas em todas as páginas.
+  Índice: Variáveis · Base · Cabeçalho/Menu · Botões · Secções
+  Cartões · Campos de formulário · Rodapé · Responsivo */
 
 /* 1. VARIÁVEIS (cores e medidas usadas em todo o site) */
 :root {
