@@ -1,7 +1,4 @@
-/* ==========================================================
-   EQUIPAMENTO – LISTA E DETALHE (equora_equipamento.html)
-   (as formatações gerais do site estão em equora.css)
-   ========================================================== */
+/* EQUIPAMENTO */
 
 /* Filtros e resultados */
 .filtros {
@@ -18,7 +15,7 @@
 .etiqueta { background: #e1ebf4; color: #2a4a66; }
 .cartao img { aspect-ratio: 4 / 3; }
 
-/* ---------- Detalhe (vista que aparece com #item-N) ---------- */
+/* Detalhe (vista que aparece com #item-N) */
 
 /* Disposição em duas colunas */
 .grelha-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; align-items: start; }
