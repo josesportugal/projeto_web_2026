@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cavalos – Equora, centro hípico">
+  <title>Cavalos · Equora</title>
+  <link rel="icon" href="images/logo.png">
+  <link rel="stylesheet" href="equora.css">
+  <link rel="stylesheet" href="equora_cavalos.css">
+</head>
+<body>
+  <header class="cabecalho">
+    <div class="container">
+      <a class="logo" href="equora_principal.html" aria-label="Equora – ir para a página principal"><img src="images/logo.png" alt="Equora"></a>
+      <button class="btn-menu" id="btn-menu" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">☰</button>
+      <nav class="menu" id="menu" aria-label="Menu principal">
+      <ul>
+        <li><a href="equora_principal.html">Início</a></li>
+        <li><a href="equora_campos.html">Campos</a></li>
+        <li><a href="equora_cavalos.html" aria-current="page">Cavalos</a></li>
+        <li><a href="equora_equipamento.html">Equipamento</a></li>
+        <li><a href="equora_reservas.html">Reservas</a></li>
+        <li><a href="equora_sobre.html">Sobre nós</a></li>
+      </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="barra-voltar">
+    <div class="container">
+      <a class="btn-voltar" href="equora_principal.html">🏠 Voltar à página principal</a>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+
+      <!-- VISTA 1: lista com filtros -->
+      <div id="vista-lista">
+        <div class="titulo-pagina">
+          <h1>Cavalos</h1>
+          <p>Conhece os nossos cavalos. Filtra por raça, nível e preço.</p>
+        </div>
+
+        <div class="filtros" aria-label="Filtros">
+          <div class="campo">
+            <label for="pesquisa">Pesquisar</label>
+            <input type="search" id="pesquisa" placeholder="Escreve um nome…">
+          </div>
+      <div class="campo">
+        <label for="filtro-raca">Raça</label>
+        <select id="filtro-raca" data-filtro="raca">
+          <option value="">Todos</option>
+          <option value="Andaluz">Andaluz</option>
+          <option value="Crioulo">Crioulo</option>
+          <option value="Lusitano">Lusitano</option>
+          <option value="Puro Sangue Inglês">Puro Sangue Inglês</option>
+          <option value="Pónei Shetland">Pónei Shetland</option>
+          <option value="Quarto de Milha">Quarto de Milha</option>
+        </select>
+      </div>
+      <div class="campo">
+        <label for="filtro-nivel">Nível</label>
+        <select id="filtro-nivel" data-filtro="nivel">
+          <option value="">Todos</option>
+          <option value="Avançado">Avançado</option>
+          <option value="Iniciante">Iniciante</option>
+          <option value="Intermédio">Intermédio</option>
+        </select>
+      </div>
+          <div class="campo">
+            <label for="filtro-preco">Preço máximo: <span id="valor-preco">32 €/hora</span></label>
+            <input type="range" id="filtro-preco" min="0" max="32" value="32" data-unidade="€/hora">
+          </div>
+          <button type="button" class="btn btn-claro btn-pequeno" id="limpar">Limpar filtros</button>
+        </div>
+
+        <p class="contador" id="contador" aria-live="polite">8 resultados</p>
+
+        <div class="grelha" id="lista">
+        <article class="cartao" data-raca="Lusitano" data-nivel="Avançado" data-preco="30">
+          <img src="images/cavalos/trovao.svg" alt="Cavalo Trovão">
+          <div class="cartao-corpo">
+            <h3>Trovão</h3>
+            <div class="etiquetas"><span class="etiqueta">Lusitano</span><span class="etiqueta">Avançado</span></div>
+            <span class="preco">30 € <small>/ hora</small></span>
+            <a class="btn btn-pequeno" href="equora_cavalos.html#item-1">Ver detalhes</a>
+          </div>
+        </article>
+        <article class="cartao" data-raca="Puro Sangue Inglês" data-nivel="Intermédio" data-preco="28">
+          <img src="images/cavalos/estrela.svg" alt="Cavalo Estrela">
+          <div class="cartao-corpo">
+            <h3>Estrela</h3>
+            <div class="etiquetas"><span class="etiqueta">Puro Sangue Inglês</span><span class="etiqueta">Intermédio</span></div>
+            <span class="preco">28 € <small>/ hora</small></span>
+            <a class="btn btn-pequeno" href="equora_cavalos.html#item-2">Ver detalhes</a>
+          </div>
+        </article>
+        <article class="cartao" data-raca="Quarto de Milha" data-nivel="Iniciante" data-preco="22">
+          <img src="images/cavalos/perola.svg" alt="Cavalo Pérola">
+          <div class="cartao-corpo">
+            <h3>Pérola</h3>
+            <div class="etiquetas"><span class="etiqueta">Quarto de Milha</span><span class="etiqueta">Iniciante</span></div>
+            <span class="preco">22 € <small>/ hora</small></span>
+            <a class="btn btn-pequeno" href="equora_cavalos.html#item-3">Ver detalhes</a>
+          </div>
+        </article>
+        <article class="cartao" data-raca="Pónei Shetland" data-nivel="Iniciante" data-preco="15">
+          <img src="images/cavalos/bolinha.svg" alt="Cavalo Bolinha">
+          <div class="cartao-corpo">
+            <h3>Bolinha</h3>
+            <div class="etiquetas"><span class="etiqueta">Pónei Shetland</span><span class="etiqueta">Iniciante</span></div>
+            <span class="preco">15 € <small>/ hora</small></span>
+            <a class="btn btn-pequeno" href="equora_cavalos.html#item-4">Ver detalhes</a>
+          </div>
+        </article>
+        <article class="cartao" data-raca="Crioulo" data-nivel="Intermédio" data-preco="25">
+          <img src="images/cavalos/relampago.svg" alt="Cavalo Relâmpago">
+          <div class="cartao-corpo">
+            <h3>Relâmpago</h3>
+            <div class="etiquetas"><span class="etiqueta">Crioulo</span><span class="etiqueta">Intermédio</span></div>
+            <span class="preco">25 € <small>/ hora</small></span>
+            <a class="btn btn-pequeno" href="equora_cavalos.html#item-5">Ver detalhes</a>
+          </div>
+        </article>
+        <article class="cartao" data-raca="Andaluz" data-nivel="Avançado" data-preco="32">
+          <img src="images/cavalos/sultao.svg" alt="Cavalo Sultão">
+          <div class="cartao-corpo">
+            <h3>Sultão</h3>
+            <div class="etiquetas"><span class="etiqueta">Andaluz</span><span class="etiqueta">Avançado</span></div>
+            <span class="preco">32 € <small>/ hora</small></span>
+            <a class="btn btn-pequeno" href="equora_cavalos.html#item-6">Ver detalhes</a>
+          </div>
+        </article>
+        <article class="cartao" data-raca="Lusitano" data-nivel="Intermédio" data-preco="26">
+          <img src="images/cavalos/aurora.svg" alt="Cavalo Aurora">
+          <div class="cartao-corpo">
+            <h3>Aurora</h3>
+            <div class="etiquetas"><span class="etiqueta">Lusitano</span><span class="etiqueta">Intermédio</span></div>
+            <span class="preco">26 € <small>/ hora</small></span>
+            <a class="btn btn-pequeno" href="equora_cavalos.html#item-7">Ver detalhes</a>
+          </div>
+        </article>
+        <article class="cartao" data-raca="Quarto de Milha" data-nivel="Iniciante" data-preco="20">
+          <img src="images/cavalos/canela.svg" alt="Cavalo Canela">
+          <div class="cartao-corpo">
+            <h3>Canela</h3>
+            <div class="etiquetas"><span class="etiqueta">Quarto de Milha</span><span class="etiqueta">Iniciante</span></div>
+            <span class="preco">20 € <small>/ hora</small></span>
+            <a class="btn btn-pequeno" href="equora_cavalos.html#item-8">Ver detalhes</a>
+          </div>
+        </article>
+        </div>
+        <p class="sem-resultados" id="sem-resultados" hidden>😕 Não encontrámos nada com esses filtros. Experimenta limpar os filtros.</p>
+      </div>
+
+      <!-- VISTA 2: detalhe. Todos os itens estão aqui; só aparece o do endereço (…#item-3) -->
+      <div id="vista-detalhe" class="seccao" hidden>
+        <article class="detalhe-item" id="item-1" hidden>
+          <div class="grelha-2">
+            <div class="detalhe-foto">
+              <img src="images/cavalos/trovao.svg" alt="Cavalo Trovão">
+            </div>
+            <div class="detalhe-info">
+              <h1>Trovão</h1>
+              <p>Lusitano elegante e muito responsivo, ideal para cavaleiros experientes e treino de dressage.</p>
+              <span class="preco">30 € / hora</span>
+              <table class="tabela-info">
+                <tbody>
+                <tr><th>Raça</th><td>Lusitano</td></tr>
+                <tr><th>Idade</th><td>9 anos</td></tr>
+                <tr><th>Nível</th><td>Avançado</td></tr>
+                <tr><th>Temperamento</th><td>Enérgico e atento</td></tr>
+                <tr><th>Disponibilidade</th><td>Segunda a sexta</td></tr>
+                </tbody>
+              </table>
+              <div class="acoes">
+                <a class="btn btn-verde" href="equora_reservas.html?servico=cavalo&amp;item=1">Reservar</a>
+                <a class="btn btn-claro" href="equora_cavalos.html#lista">← Ver todos em Cavalos</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="detalhe-item" id="item-2" hidden>
+          <div class="grelha-2">
+            <div class="detalhe-foto">
+              <img src="images/cavalos/estrela.svg" alt="Cavalo Estrela">
+            </div>
+            <div class="detalhe-info">
+              <h1>Estrela</h1>
+              <p>Égua veloz, muito boa nos saltos. Pede mão firme mas gentil.</p>
+              <span class="preco">28 € / hora</span>
+              <table class="tabela-info">
+                <tbody>
+                <tr><th>Raça</th><td>Puro Sangue Inglês</td></tr>
+                <tr><th>Idade</th><td>7 anos</td></tr>
+                <tr><th>Nível</th><td>Intermédio</td></tr>
+                <tr><th>Temperamento</th><td>Rápida e sensível</td></tr>
+                <tr><th>Disponibilidade</th><td>Terça a sábado</td></tr>
+                </tbody>
+              </table>
+              <div class="acoes">
+                <a class="btn btn-verde" href="equora_reservas.html?servico=cavalo&amp;item=2">Reservar</a>
+                <a class="btn btn-claro" href="equora_cavalos.html#lista">← Ver todos em Cavalos</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="detalhe-item" id="item-3" hidden>
+          <div class="grelha-2">
+            <div class="detalhe-foto">
+              <img src="images/cavalos/perola.svg" alt="Cavalo Pérola">
+            </div>
+            <div class="detalhe-info">
+              <h1>Pérola</h1>
+              <p>A preferida das primeiras aulas: tranquila, obediente e muito segura.</p>
+              <span class="preco">22 € / hora</span>
+              <table class="tabela-info">
+                <tbody>
+                <tr><th>Raça</th><td>Quarto de Milha</td></tr>
+                <tr><th>Idade</th><td>12 anos</td></tr>
+                <tr><th>Nível</th><td>Iniciante</td></tr>
+                <tr><th>Temperamento</th><td>Calma e paciente</td></tr>
+                <tr><th>Disponibilidade</th><td>Todos os dias</td></tr>
+                </tbody>
+              </table>
+              <div class="acoes">
+                <a class="btn btn-verde" href="equora_reservas.html?servico=cavalo&amp;item=3">Reservar</a>
+                <a class="btn btn-claro" href="equora_cavalos.html#lista">← Ver todos em Cavalos</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="detalhe-item" id="item-4" hidden>
+          <div class="grelha-2">
+            <div class="detalhe-foto">
+              <img src="images/cavalos/bolinha.svg" alt="Cavalo Bolinha">
+            </div>
+            <div class="detalhe-info">
+              <h1>Bolinha</h1>
+              <p>Pónei para as crianças mais pequenas. Sempre acompanhado por um monitor.</p>
+              <span class="preco">15 € / hora</span>
+              <table class="tabela-info">
+                <tbody>
+                <tr><th>Raça</th><td>Pónei Shetland</td></tr>
+                <tr><th>Idade</th><td>10 anos</td></tr>
+                <tr><th>Nível</th><td>Iniciante</td></tr>
+                <tr><th>Temperamento</th><td>Brincalhão e dócil</td></tr>
+                <tr><th>Disponibilidade</th><td>Todos os dias</td></tr>
+                </tbody>
+              </table>
+              <div class="acoes">
+                <a class="btn btn-verde" href="equora_reservas.html?servico=cavalo&amp;item=4">Reservar</a>
+                <a class="btn btn-claro" href="equora_cavalos.html#lista">← Ver todos em Cavalos</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="detalhe-item" id="item-5" hidden>
+          <div class="grelha-2">
+            <div class="detalhe-foto">
+              <img src="images/cavalos/relampago.svg" alt="Cavalo Relâmpago">
+            </div>
+            <div class="detalhe-info">
+              <h1>Relâmpago</h1>
+              <p>Excelente nos trilhos e passeios longos, com muita resistência.</p>
+              <span class="preco">25 € / hora</span>
+              <table class="tabela-info">
+                <tbody>
+                <tr><th>Raça</th><td>Crioulo</td></tr>
+                <tr><th>Idade</th><td>8 anos</td></tr>
+                <tr><th>Nível</th><td>Intermédio</td></tr>
+                <tr><th>Temperamento</th><td>Resistente e dedicado</td></tr>
+                <tr><th>Disponibilidade</th><td>Quarta a domingo</td></tr>
+                </tbody>
+              </table>
+              <div class="acoes">
+                <a class="btn btn-verde" href="equora_reservas.html?servico=cavalo&amp;item=5">Reservar</a>
+                <a class="btn btn-claro" href="equora_cavalos.html#lista">← Ver todos em Cavalos</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="detalhe-item" id="item-6" hidden>
+          <div class="grelha-2">
+            <div class="detalhe-foto">
+              <img src="images/cavalos/sultao.svg" alt="Cavalo Sultão">
+            </div>
+            <div class="detalhe-info">
+              <h1>Sultão</h1>
+              <p>Cavalo de grande presença, muito sensível às ajudas. Recomendado a quem já tem experiência.</p>
+              <span class="preco">32 € / hora</span>
+              <table class="tabela-info">
+                <tbody>
+                <tr><th>Raça</th><td>Andaluz</td></tr>
+                <tr><th>Idade</th><td>11 anos</td></tr>
+                <tr><th>Nível</th><td>Avançado</td></tr>
+                <tr><th>Temperamento</th><td>Orgulhoso e elegante</td></tr>
+                <tr><th>Disponibilidade</th><td>Segunda a sexta</td></tr>
+                </tbody>
+              </table>
+              <div class="acoes">
+                <a class="btn btn-verde" href="equora_reservas.html?servico=cavalo&amp;item=6">Reservar</a>
+                <a class="btn btn-claro" href="equora_cavalos.html#lista">← Ver todos em Cavalos</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="detalhe-item" id="item-7" hidden>
+          <div class="grelha-2">
+            <div class="detalhe-foto">
+              <img src="images/cavalos/aurora.svg" alt="Cavalo Aurora">
+            </div>
+            <div class="detalhe-info">
+              <h1>Aurora</h1>
+              <p>Égua jovem em evolução, ótima para quem quer progredir com segurança.</p>
+              <span class="preco">26 € / hora</span>
+              <table class="tabela-info">
+                <tbody>
+                <tr><th>Raça</th><td>Lusitano</td></tr>
+                <tr><th>Idade</th><td>6 anos</td></tr>
+                <tr><th>Nível</th><td>Intermédio</td></tr>
+                <tr><th>Temperamento</th><td>Curiosa e dócil</td></tr>
+                <tr><th>Disponibilidade</th><td>Segunda a sábado</td></tr>
+                </tbody>
+              </table>
+              <div class="acoes">
+                <a class="btn btn-verde" href="equora_reservas.html?servico=cavalo&amp;item=7">Reservar</a>
+                <a class="btn btn-claro" href="equora_cavalos.html#lista">← Ver todos em Cavalos</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="detalhe-item" id="item-8" hidden>
+          <div class="grelha-2">
+            <div class="detalhe-foto">
+              <img src="images/cavalos/canela.svg" alt="Cavalo Canela">
+            </div>
+            <div class="detalhe-info">
+              <h1>Canela</h1>
+              <p>Experiente e calma, passa confiança a quem monta pela primeira vez.</p>
+              <span class="preco">20 € / hora</span>
+              <table class="tabela-info">
+                <tbody>
+                <tr><th>Raça</th><td>Quarto de Milha</td></tr>
+                <tr><th>Idade</th><td>14 anos</td></tr>
+                <tr><th>Nível</th><td>Iniciante</td></tr>
+                <tr><th>Temperamento</th><td>Muito tranquila</td></tr>
+                <tr><th>Disponibilidade</th><td>Todos os dias</td></tr>
+                </tbody>
+              </table>
+              <div class="acoes">
+                <a class="btn btn-verde" href="equora_reservas.html?servico=cavalo&amp;item=8">Reservar</a>
+                <a class="btn btn-claro" href="equora_cavalos.html#lista">← Ver todos em Cavalos</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+    </div>
+  </main>
+  <footer class="rodape">
+    <div class="container">
+      <div>
+        <h3>Equora</h3>
+        <p>Marcações, cavalos e equipamento num só lugar.</p>
+      </div>
+      <div>
+        <h3>Páginas</h3>
+        <a href="equora_principal.html">Início</a>
+        <a href="equora_sobre.html">Sobre nós</a>
+        <a href="equora_sobre.html#contactos">Contactos</a>
+      </div>
+      <div>
+        <h3>Reservar</h3>
+        <a href="equora_campos.html">Campos</a>
+        <a href="equora_cavalos.html">Cavalos</a>
+        <a href="equora_equipamento.html">Equipamento</a>
+        <a href="equora_reservas.html">Fazer reserva</a>
+      </div>
+      <p class="direitos">© <span id="ano">2026</span> Equora · Projeto académico de Desenvolvimento para a Web</p>
+    </div>
+  </footer>
+  <button class="voltar-topo" id="voltar-topo" aria-label="Voltar ao topo">↑</button>
+
+  <script src="js/comum.js"></script>
+  <script src="js/lista.js"></script>
+</body>
+</html>
