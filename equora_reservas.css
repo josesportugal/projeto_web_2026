@@ -1,7 +1,4 @@
-/* ==========================================================
-   RESERVAS (equora_reservas.html)
-   (as formatações gerais do site estão em equora.css)
-   ========================================================== */
+/* RESERVAS */
 
 /* Disposição em duas colunas */
 .grelha-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; align-items: start; }
